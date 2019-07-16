@@ -110,6 +110,7 @@ class WordRevision extends React.Component {
         {this.state.lastResult && <p>{this.state.lastResult}</p>}
         {this.state.revisionInProgress &&
           <div>
+            <p>Progress: {this.state.step + 1}/{this.state.wordsCount}</p>
             <p>{this.state.langSettings[this.state.step] !== "original" ? this.state.revisedWords[this.state.step].original : this.state.revisedWords[this.state.step].translation}</p>
             <section>
               {this.renderOptions()}
