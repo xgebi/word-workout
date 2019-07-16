@@ -40,15 +40,31 @@ class WordRevision extends React.Component {
   }
 
   nextStep = (event) => {
-    debugger;
+    let atTheEndStep = 0;
+    let self = this;
+    function checkWordInArray(word) {
+      if (self.state.revisedWords[atTheEndStep].original === word.original && self.state.revisedWords[atTheEndStep].translation === word.translation) {
+        return true;
+      }
+      return false;
+    }
+
     let result;
     let correctAnswer = this.state.langSettings[this.state.step] === "original" ? this.state.revisedWords[this.state.step].original : this.state.revisedWords[this.state.step].translation;
     result = event.target.textContent === correctAnswer ? "You were right" : "Wrong! \"" + this.state.revisedWords[this.state.step].translation + "\" is \"" + this.state.revisedWords[this.state.step].original + "\"";
     if (this.state.step + 1 >= this.state.revisedWords.length) {
+      let words = this.props.words;
+      for (let i = 0; i <= this.state.step; i++) {
+        let index = this.props.words.findIndex(checkWordInArray);
+        words[index].lastRevised = new Date();
+        atTheEndStep++;
+      }
+
       this.setState({
         lastResult: result,
         revisionInProgress: false
       });
+      this.props.onWordsUpdated(words)
       return;
     }
     this.setState({
@@ -94,7 +110,6 @@ class WordRevision extends React.Component {
         {this.state.lastResult && <p>{this.state.lastResult}</p>}
         {this.state.revisionInProgress &&
           <div>
-            {this.state.step}
             <p>{this.state.langSettings[this.state.step] !== "original" ? this.state.revisedWords[this.state.step].original : this.state.revisedWords[this.state.step].translation}</p>
             <section>
               {this.renderOptions()}
