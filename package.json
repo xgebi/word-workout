@@ -1,6 +1,6 @@
 {
   "name": "word-workout",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "homepage": "https://xgebi.github.io/word-workout",
   "dependencies": {
