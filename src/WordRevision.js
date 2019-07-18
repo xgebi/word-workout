@@ -8,7 +8,7 @@ class WordRevision extends React.Component {
     super(props);
     this.state = {
       revisionInProgress: false,
-      wordsCount: 10
+      wordsCount: this.props.words.length < 10 ? this.props.words.length : 10
     }
   }
 
@@ -17,6 +17,9 @@ class WordRevision extends React.Component {
   }
 
   startRevision = () => {
+    if (this.state.wordsCount > this.props.words.length) {
+      return;
+    }
     let wordList = this.props.words.slice(0, this.state.wordsCount)
 
     for (let i = wordList.length - 1; i > 0; i--) {

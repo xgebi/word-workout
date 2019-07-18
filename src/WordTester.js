@@ -84,7 +84,7 @@ class WordTester extends React.Component {
         <h2>From {this.props.original} to {this.props.target}</h2>
         <nav>
           <button onClick={this.showTable}>Show table</button>
-          <button onClick={this.showRevise} disable={this.state.words.length < 10}>Revise</button>
+          <button onClick={this.showRevise} disabled={this.state.words.length < 10}>Revise</button>
           <button onClick={this.showAddWords}>Add words</button>
           <button onClick={this.showExportWords}>Export words</button>
         </nav>
