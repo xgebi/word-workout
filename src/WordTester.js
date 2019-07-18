@@ -8,19 +8,21 @@ class WordTester extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      words: this.props.words,
+      words: this.props.words.sort(this.wordSortFn).reverse(),
       display: "table"
     }
   }
 
   wordSortFn = (a, b) => {
-    if (a.lastRevised < b.lastRevised) {
+    if (!a.lastRevised) {
       return -1;
     }
-    if (a.lastRevised > b.lastRevised) {
+    if (!b.lastRevised) {
+      return 0;
+    }
+    if (a.lastRevised < b.lastRevised) {
       return 1;
     }
-    return 0;
   }
 
   showExportWords = () => {
@@ -63,12 +65,12 @@ class WordTester extends React.Component {
 
   updateWords = (words) => {
     this.setState({
-      words: words
+      words: words.sort(this.wordSortFn).reverse()
     });
   }
 
   render() {
-    let wordList = this.state.words.sort(this.wordSortFn);
+    let wordList = this.state.words;
     let list = wordList.map((word, index) =>
       <tr key={"line-" + index}>
         <td>{word.original}</td>
@@ -82,7 +84,7 @@ class WordTester extends React.Component {
         <h2>From {this.props.original} to {this.props.target}</h2>
         <nav>
           <button onClick={this.showTable}>Show table</button>
-          <button onClick={this.showRevise}>Revise</button>
+          <button onClick={this.showRevise} disable={this.state.words.length < 10}>Revise</button>
           <button onClick={this.showAddWords}>Add words</button>
           <button onClick={this.showExportWords}>Export words</button>
         </nav>
