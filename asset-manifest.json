@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/word-workout/static/css/main.ea5a9af4.chunk.css",
-    "main.js": "/word-workout/static/js/main.de6f9888.chunk.js",
-    "main.js.map": "/word-workout/static/js/main.de6f9888.chunk.js.map",
+    "main.js": "/word-workout/static/js/main.f161efbd.chunk.js",
+    "main.js.map": "/word-workout/static/js/main.f161efbd.chunk.js.map",
     "runtime~main.js": "/word-workout/static/js/runtime~main.61ef9ed0.js",
     "runtime~main.js.map": "/word-workout/static/js/runtime~main.61ef9ed0.js.map",
     "static/js/2.fe7d0a57.chunk.js": "/word-workout/static/js/2.fe7d0a57.chunk.js",
     "static/js/2.fe7d0a57.chunk.js.map": "/word-workout/static/js/2.fe7d0a57.chunk.js.map",
     "index.html": "/word-workout/index.html",
-    "precache-manifest.de420e626793cbfb26f6c5ccbcffb60c.js": "/word-workout/precache-manifest.de420e626793cbfb26f6c5ccbcffb60c.js",
+    "precache-manifest.8de804ed28ee0ef6c01fdf8c6b64a990.js": "/word-workout/precache-manifest.8de804ed28ee0ef6c01fdf8c6b64a990.js",
     "service-worker.js": "/word-workout/service-worker.js",
     "static/css/main.ea5a9af4.chunk.css.map": "/word-workout/static/css/main.ea5a9af4.chunk.css.map"
   }
