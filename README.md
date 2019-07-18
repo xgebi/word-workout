@@ -1,4 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Word Workout
+
+*Disclaimer:* This is my first React app after more than an year and a half of avoiding React.
+
+A small app which doesn't need back-end. Format for language file:
+```
+{
+	"originalLanguage": "English",
+	"targetLanguage": "German",
+	"words": [
+		{
+			"original": "the (masculine)",
+			"translation": "der",
+			"lastRevised": null
+		}
+	]
+}
+```
 
 ## Available Scripts
 
