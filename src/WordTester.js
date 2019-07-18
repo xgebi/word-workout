@@ -69,7 +69,6 @@ class WordTester extends React.Component {
 
   render() {
     let wordList = this.state.words.sort(this.wordSortFn);
-    debugger;
     let list = wordList.map((word, index) =>
       <tr key={"line-" + index}>
         <td>{word.original}</td>
@@ -80,7 +79,6 @@ class WordTester extends React.Component {
 
     return (
       <div>
-        <h1>Word testing tool</h1>
         <h2>From {this.props.original} to {this.props.target}</h2>
         <nav>
           <button onClick={this.showTable}>Show table</button>

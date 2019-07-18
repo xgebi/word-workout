@@ -1,0 +1,20 @@
+.word-buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 5rem 5rem;
+	grid-gap: 1rem;
+}
+
+.word-buttons button {
+	background: white;
+	border: 3px solid purple;
+	color: purple;
+	padding: 1rem auto;
+	display: inline-block;
+}
+
+.word {
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+}

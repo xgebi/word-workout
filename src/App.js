@@ -18,12 +18,12 @@ class App extends React.Component {
             this.setState({ wordsFormatError: true });
             return;
           }
-          
-          this.setState({ 
-            words: data.words, 
+
+          this.setState({
+            words: data.words,
             original: data.originalLanguage,
             target: data.targetLanguage,
-            wordsFormatError: false 
+            wordsFormatError: false
           });
         };
       })(f);
@@ -68,20 +68,22 @@ class App extends React.Component {
     if (this.state && this.state.wordsFormatError) {
       return (
         <div className="App">
+          <h1>Word Workout</h1>
           Please, use correct word file<br />
-          <input type="file" accept="application/json" onChange={this.getFile}/>
+          <input type="file" accept="application/json" onChange={this.getFile} />
         </div>
       );
     }
 
     if (this.state && this.state.newlyCreated) {
       return (
-        <div>
+        <div className="App">
+          <h1>Word Workout</h1>
           <label htmlFor="original">Original:</label>
-          <input type="text" value={this.state.original} name="original" onChange={this.handleInputChange}/>
+          <input type="text" value={this.state.original} name="original" onChange={this.handleInputChange} />
 
           <label htmlFor="target">Translation:</label>
-          <input type="text" value={this.state.target} name="target" onChange={this.handleInputChange}/>
+          <input type="text" value={this.state.target} name="target" onChange={this.handleInputChange} />
 
 
           <WordAdder onWordAdded={this.addWord} />
@@ -93,6 +95,7 @@ class App extends React.Component {
     if (this.state && this.state.words.length > 0 && this.state.target && this.state.original) {
       return (
         <div className="App">
+          <h1>Word Workout</h1>
           <WordTester words={this.state.words} target={this.state.target} original={this.state.original} />
         </div>
       );
@@ -100,7 +103,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <input type="file" accept="application/json" onChange={this.getFile}/>
+        <h1>Word Workout</h1>
+        <input type="file" accept="application/json" onChange={this.getFile} />
         <p>Or start new learning file: <button onClick={this.createNewFile}>Create</button></p>
       </div>
     )

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './WordRevision.css';
+
 class WordRevision extends React.Component {
 
   constructor(props) {
@@ -111,8 +113,8 @@ class WordRevision extends React.Component {
         {this.state.revisionInProgress &&
           <div>
             <p>Progress: {this.state.step + 1}/{this.state.wordsCount}</p>
-            <p>{this.state.langSettings[this.state.step] !== "original" ? this.state.revisedWords[this.state.step].original : this.state.revisedWords[this.state.step].translation}</p>
-            <section>
+            <p className="word">{this.state.langSettings[this.state.step] !== "original" ? this.state.revisedWords[this.state.step].original : this.state.revisedWords[this.state.step].translation}</p>
+            <section className="word-buttons">
               {this.renderOptions()}
             </section>
             <button onClick={this.stopRevisingByButton}>Stop</button>

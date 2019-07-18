@@ -21,13 +21,12 @@ class WordAdder extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    debugger;
     this.props.onWordAdded({
       original: this.state.original,
       translation: this.state.target,
       lastRevised: null
     });
-    
+
     this.setState({
       original: "",
       target: ""
@@ -38,10 +37,10 @@ class WordAdder extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="original">Original</label>
-        <input type="text" onChange={this.handleInputChange} value={this.state.original}name="original" />
+        <input type="text" onChange={this.handleInputChange} value={this.state.original} name="original" />
 
         <label htmlFor="target">Target</label>
-        <input type="text" onChange={this.handleInputChange} value={this.state.target}name="target" />
+        <input type="text" onChange={this.handleInputChange} value={this.state.target} name="target" />
 
         <input type="submit" value="Add word" />
       </form>
