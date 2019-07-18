@@ -2,7 +2,7 @@
   "name": "word-workout",
   "version": "0.1.8",
   "private": false,
-  "license" : "GNU GPLv3 or later"
+  "license" : "GNU GPLv3 or later",
   "homepage": "https://xgebi.github.io/word-workout",
   "dependencies": {
     "react": "^16.8.6",
