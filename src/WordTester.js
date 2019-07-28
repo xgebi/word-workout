@@ -1,6 +1,7 @@
 import React from 'react';
 import WordAdder from './WordAdder';
 import WordRevision from './WordRevision';
+import AppSettings from './AppSettings';
 
 
 // accepts prop words
@@ -49,6 +50,12 @@ class WordTester extends React.Component {
     })
   }
 
+  showSettings = () => {
+    this.setState({
+      display: "settings"
+    })
+  }
+
   showAddWords = () => {
     this.setState({
       display: "add"
@@ -87,9 +94,11 @@ class WordTester extends React.Component {
           <button onClick={this.showRevise} disabled={this.state.words.length < 10}>Revise</button>
           <button onClick={this.showAddWords}>Add words</button>
           <button onClick={this.showExportWords}>Export words</button>
+          <button onClick={this.showSettings}>Settings</button>
         </nav>
         {this.state.display === "add" && <WordAdder onWordAdded={this.addWord} />}
         {this.state.display === "revise" && <WordRevision words={this.state.words} onWordsUpdated={this.updateWords} />}
+        {this.state.display === "settings" && <AppSettings settings={this.state.settings} onSettingsUpdated={this.updateWords} />}
         {this.state.display === "link" && <a href={this.state.link} download="words.json">Download updated words</a>}
         {this.state.display === "table" &&
           <table>
